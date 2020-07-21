@@ -455,7 +455,7 @@ namespace Microsoft.Azure.Commands.Common.Authentication.Factories
                 ResourceClientUri = audience,
                 AdDomain = tenantId,
                 ValidateAuthority = !environment.OnPremise,
-                TokenCache = tokenCache
+                //TokenCache = tokenCache
             };
         }
 
