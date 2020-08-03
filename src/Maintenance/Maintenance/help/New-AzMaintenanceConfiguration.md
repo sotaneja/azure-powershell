@@ -14,7 +14,9 @@ Create or Update configuration record
 
 ```
 New-AzMaintenanceConfiguration [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
- [-Tag <Hashtable>] [-ExtensionProperty <Hashtable>] [-MaintenanceScope <String>] [-AsJob]
+ [-Tag <Hashtable>] [-ExtensionProperty <Hashtable>] [-MaintenanceScope <String>] [-StartDateTime] <String>
+ [-ExpirationDateTime] <String> [-Duration] <String>
+ [-Timezone] <String> [-RecurEvery] <String> [-Visibility] <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -25,16 +27,24 @@ Create or Update configuration record
 
 ### Example 1
 ```powershell
-PS C:\> New-AzMaintenanceConfiguration -ResourceGroupName smdtest -Name workervmscentralus -MaintenanceScope Host -Location centralus
+PS C:\> New-AzMaintenanceConfiguration -ResourceGroupName smdtest -Name workervmscentralus -MaintenanceScope Host -Location centralus -StartDateTime 2020-08-01 00:00 -ExpirationDateTime 2021-08-04 00:00 -TimeZone Pacific Standard Time -Duration 05:00 -RecurEvery Day
 
 
 Location            : centralus
 Tags                : {}
 ExtensionProperties : {}
 MaintenanceScope    : Host
+StartDateTime       : 2020-08-01 00:00
+ExpirationDateTime  : 2021-08-04 00:00
+TimeZone            : Pacific Standard Time
+RecurEvery          : Day
+Duration            : 05:00
+MaintenanceScope    : Host
+Visibility          : Custom
 Id                  : /subscriptions/42c974dd-2c03-4f1b-96ad-b07f050aaa74/resourcegroups/smdtest/providers/Microsoft.Maintenance/maintenanceConfigurations/workervmscentralus
 Name                : workervmscentralus
 Type                : Microsoft.Maintenance/maintenanceConfigurations
+
 ```
 
 Create a maintenance configuration with scope Host
@@ -100,9 +110,96 @@ Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
+### -StartDateTime
+The startDateTime of the schedule
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpirationDateTime
+The expirationDateTime of the schedule
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+### -Timezone
+The timezone
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Duration
+The duration
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+### -RecurEvery
+The schedule recurrence
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -MaintenanceScope
 The Maintenance Scope.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Visibility
+The visibility of the scope
 
 ```yaml
 Type: System.String
