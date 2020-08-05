@@ -13,7 +13,7 @@ Get Public Maintenance configuration record
 ## SYNTAX
 
 ```
-Get-AzPublicMaintenanceConfiguration [-Name] <String>]
+Get-AzMaintenancePublicConfiguration [-Name] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -24,7 +24,7 @@ Get Public Maintenance configuration record
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzPublicMaintenanceConfiguration -Name workervmscentralus
+PS C:\> Get-AzMaintenancePublicConfiguration -Name workervmscentralus
 
 
 Location            : centralus

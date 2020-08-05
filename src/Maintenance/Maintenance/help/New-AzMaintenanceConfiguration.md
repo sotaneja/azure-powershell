@@ -14,9 +14,9 @@ Create or Update configuration record
 
 ```
 New-AzMaintenanceConfiguration [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
- [-Tag <Hashtable>] [-ExtensionProperty <Hashtable>] [-MaintenanceScope <String>] [-StartDateTime] <String>
- [-ExpirationDateTime] <String> [-Duration] <String>
- [-Timezone] <String> [-RecurEvery] <String> [-Visibility] <String> [-AsJob]
+ [-Tag <Hashtable>] [-ExtensionProperty <Hashtable>] [-MaintenanceScope <MaintenanceScope>] [-StartDateTime] <String>
+ [-ExpirationDateTime] <String> [-Duration] <System.TimeSpan>
+ [-Timezone] <String> [-RecurEvery] <String> [-Visibility] <Visibility> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 The duration
 
 ```yaml
-Type: System.String
+Type: System.Timespan
 Parameter Sets: (All)
 Aliases:
 
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 The Maintenance Scope.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.Management.Maintenance.Models.MaintenanceScope
 Parameter Sets: (All)
 Aliases:
 
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 The visibility of the scope
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.Management.Maintenance.Models.Visibility
 Parameter Sets: (All)
 Aliases:
 
