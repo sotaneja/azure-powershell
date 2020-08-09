@@ -13,7 +13,7 @@ Get Public Maintenance configuration record
 ## SYNTAX
 
 ```
-Get-AzMaintenancePublicConfiguration [-Name] <String>]
+Get-AzMaintenancePublicConfiguration [-Name] <String>] [-ResourceGroup] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -73,6 +73,21 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+The resource Group Name.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
